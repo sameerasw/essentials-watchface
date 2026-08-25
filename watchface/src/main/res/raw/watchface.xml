@@ -773,6 +773,65 @@
             <Complication type="EMPTY"/>
         </ComplicationSlot>
 
+        <!-- Top-to-Bottom Gradient Progress -->
+        <ComplicationSlot
+            slotId="6"
+            displayName="slot_6"
+            supportedTypes="RANGED_VALUE EMPTY"
+            x="0"
+            y="0"
+            width="450"
+            height="450">
+
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+
+            <BoundingRoundBox
+                cornerRadius="20"
+                width="450"
+                height="450"
+                x="0"
+                y="0" />
+
+            <Complication type="RANGED_VALUE">
+
+                <PartDraw
+                    name="top_gradient_progress"
+                    width="450"
+                    height="200"
+                    x="0"
+                    y="0"
+                    tintColor="[CONFIGURATION.themeColor.1]">
+
+                    <Rectangle
+                        x="0"
+                        y="0"
+                        width="450"
+                        height="1">
+
+                        <Transform
+                            target="height"
+                            value="4.5 * [COMPLICATION.RANGED_VALUE_VALUE]" />
+
+                        <Fill color="[CONFIGURATION.themeColor.0]">
+                            <LinearGradient
+                                startX="225"
+                                startY="0"
+                                endX="225"
+                                endY="200"
+                                colors="#80FFFFFF #40FFFFFF #00FFFFFF"
+                                positions="0 0.35 1" />
+                        </Fill>
+
+                    </Rectangle>
+
+                </PartDraw>
+
+            </Complication>
+
+            <Complication type="EMPTY" />
+
+        </ComplicationSlot>
+
         <!-- Line Complications -->
         <ComplicationSlot slotId="2"
             displayName="slot_2"

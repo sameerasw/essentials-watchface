@@ -17,6 +17,9 @@
     <string name="slot_1">Right Circle Slot</string>
     <string name="slot_2">Top Box Slot</string>
     <string name="slot_3">Bottom Box Slot</string>
+    <string name="slot_4">Bottom Left Dial Slot</string>
+    <string name="slot_5">Bottom Right Dial Slot</string>
+    <string name="slot_6">Top Glow Slot</string>
 
     <string name="id_material_theme">Material Theme</string>
     <string name="id_time_color">Digital Clock Color</string>
