@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="watch_face_name">Pixel Minimal</string>
+    <string name="watch_face_name">Essential Watch</string>
 
     <string name="id_aod">AOD Style</string>
     <string name="id_aod_0">Dimmed</string>
