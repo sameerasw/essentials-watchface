@@ -1117,12 +1117,7 @@
             width="256"
             height="46">
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
-            <DefaultProviderPolicy
-                defaultSystemProvider="DAY_AND_DATE"
-                defaultSystemProviderType="SHORT_TEXT"
-                primaryProvider="com.sameerasw.essentials/com.sameerasw.essentials.complication.GlanceComplicationService"
-                primaryProviderType="SHORT_TEXT"
-                systemProviderFallbackHierarchy="DAY_AND_DATE"/>
+            <DefaultProviderPolicy defaultSystemProvider="DAY_AND_DATE" defaultSystemProviderType="SHORT_TEXT"/>
             <BoundingRoundBox cornerRadius="15" width="258" height="48" x="-1" y="-1" />
             <Complication type="SHORT_TEXT">
                 <Condition>
