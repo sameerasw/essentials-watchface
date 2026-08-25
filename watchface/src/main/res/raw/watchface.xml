@@ -1398,7 +1398,10 @@
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
             <DefaultProviderPolicy
                 defaultSystemProvider="WATCH_BATTERY"
-                defaultSystemProviderType="RANGED_VALUE"/>
+                defaultSystemProviderType="RANGED_VALUE"
+                primaryProvider="com.sameerasw.essentials/com.sameerasw.essentials.complication.PhoneBatteryComplicationService"
+                primaryProviderType="RANGED_VALUE"
+                systemProviderFallbackHierarchy="WATCH_BATTERY"/>
             <BoundingRoundBox cornerRadius="20" width="140" height="150" x="260" y="280" />
             <Complication type="RANGED_VALUE">
                 <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
