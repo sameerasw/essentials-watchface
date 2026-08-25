@@ -1582,7 +1582,7 @@
                 <PartDraw
                     name="top_gradient_progress"
                     width="450"
-                    height="300"
+                    height="350"
                     x="0"
                     y="0"
                     tintColor="[CONFIGURATION.themeColor.1]">
@@ -1595,16 +1595,16 @@
 
                         <Transform
                             target="height"
-                            value="7 * [COMPLICATION.RANGED_VALUE_VALUE]" />
+                            value="100 * [COMPLICATION.RANGED_VALUE_VALUE]" />
 
                         <Fill color="[CONFIGURATION.themeColor.0]">
                             <LinearGradient
                                 startX="225"
                                 startY="0"
                                 endX="225"
-                                endY="300"
-                                colors="#80FFFFFF #50FFFFFF #00FFFFFF"
-                                positions="0 0.35 1" />
+                                endY="325"
+                                colors="#85FFFFFF #50FFFFFF #00FFFFFF"
+                                positions="0 0.25 1" />
                         </Fill>
 
                     </Rectangle>
