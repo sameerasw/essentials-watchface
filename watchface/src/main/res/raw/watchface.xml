@@ -237,7 +237,7 @@
         <!-- Box Complications -->
         <ComplicationSlot slotId="0"
             displayName="slot_0"
-            supportedTypes="RANGED_VALUE GOAL_PROGRESS SHORT_TEXT LONG_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
+            supportedTypes="RANGED_VALUE SHORT_TEXT LONG_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
             x="5"
             y="160"
             width="130"
@@ -575,7 +575,7 @@
         
         <ComplicationSlot slotId="1"
             displayName="slot_1"
-            supportedTypes="RANGED_VALUE GOAL_PROGRESS SHORT_TEXT LONG_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
+            supportedTypes="RANGED_VALUE SHORT_TEXT LONG_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
             x="315"
             y="160"
             width="130"
@@ -917,10 +917,11 @@
             height="450">
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
             <DefaultProviderPolicy
-                primaryProvider="com.weartools.phonebattcomp/com.weartools.phonebattcomp.complication.MobileBatteryComplicationService"
-                primaryProviderType="SHORT_TEXT"
                 defaultSystemProvider="DAY_AND_DATE"
-                defaultSystemProviderType="SHORT_TEXT"/>
+                defaultSystemProviderType="SHORT_TEXT"
+                primaryProvider="com.sameerasw.essentials/com.sameerasw.essentials.complication.GlanceComplicationService"
+                primaryProviderType="SHORT_TEXT"
+                systemProviderFallbackHierarchy="DAY_AND_DATE"/>
             <BoundingRoundBox cornerRadius="15" width="450" height="120" x="0" y="0" />
             <Complication type="SHORT_TEXT">
                 <Condition>
@@ -1116,7 +1117,12 @@
             width="256"
             height="46">
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
-            <DefaultProviderPolicy defaultSystemProvider="DAY_AND_DATE" defaultSystemProviderType="SHORT_TEXT"/>
+            <DefaultProviderPolicy
+                defaultSystemProvider="DAY_AND_DATE"
+                defaultSystemProviderType="SHORT_TEXT"
+                primaryProvider="com.sameerasw.essentials/com.sameerasw.essentials.complication.GlanceComplicationService"
+                primaryProviderType="SHORT_TEXT"
+                systemProviderFallbackHierarchy="DAY_AND_DATE"/>
             <BoundingRoundBox cornerRadius="15" width="258" height="48" x="-1" y="-1" />
             <Complication type="SHORT_TEXT">
                 <Condition>
@@ -1498,7 +1504,9 @@
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <DefaultProviderPolicy
                 defaultSystemProvider="WATCH_BATTERY"
-                defaultSystemProviderType="RANGED_VALUE"/>
+                defaultSystemProviderType="RANGED_VALUE"
+                primaryProvider="com.sameerasw.essentials/com.sameerasw.essentials.complication.GlanceComplicationService"
+                primaryProviderType="RANGED_VALUE"/>
 
             <BoundingRoundBox
                 cornerRadius="20"
