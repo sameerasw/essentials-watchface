@@ -2,3 +2,6 @@
 /local.properties
 /.idea
 watchface/build
+.artifacts/
+*.DS_Store
+watchface/release/
