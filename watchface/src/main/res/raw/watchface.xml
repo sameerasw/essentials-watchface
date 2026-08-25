@@ -978,7 +978,7 @@
             displayName="slot_3"
             supportedTypes="SHORT_TEXT LONG_TEXT EMPTY"
             x="97"
-            y="330"
+            y="340"
             width="256"
             height="46">
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
