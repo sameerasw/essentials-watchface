@@ -5,15 +5,16 @@ plugins {
 }
 
 android {
-    namespace = "com.amoledwatchfaces.pixelMinimal"
+    namespace = "com.sameerasw.essentials.watchface"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.amoledwatchfaces.pixelMinimal"
+        manifestPlaceholders += mapOf()
+        applicationId = "com.sameerasw.essentials.watchface"
         minSdk = 34
-        targetSdk = 34
-        versionCode = 10000002
-        versionName = "1.0.2"
+        targetSdk = 37
+        versionCode = 10000000
+        versionName = "1.0.0"
 
         manifestPlaceholders["publisher"] = "AndroidStudioKoala-2024.1.2"
     }
