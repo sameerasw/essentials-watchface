@@ -163,6 +163,12 @@
             <ListOption id="0" displayName="id_hollow_aod_0" icon="prev_hollow_0" />
             <ListOption id="1" displayName="id_hollow_aod_1" icon="prev_hollow_1" />
         </ListConfiguration>
+        <ListConfiguration defaultValue="0" displayName="id_clock_font" id="clockFont">
+            <ListOption id="0" displayName="id_font_flex" />
+            <ListOption id="1" displayName="id_font_growth" />
+            <ListOption id="2" displayName="id_font_inflate" />
+            <ListOption id="3" displayName="id_font_rotation" />
+        </ListConfiguration>
         <!-- Toggles -->
         <BooleanConfiguration defaultValue="FALSE" displayName="id_sec_indicator" id="secIndicator"/>
         <!-- Flavors -->
@@ -1063,37 +1069,100 @@
         </ComplicationSlot>
 
         <!-- Digital Clock -->
-        <DigitalClock width="250" height="450" x="100" y="0" tintColor="[CONFIGURATION.timeColor]">
-            <Variant mode="AMBIENT" target="scaleX" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
-            <Variant mode="AMBIENT" target="scaleY" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
-            <!-- Solid -->
-            <TimeText format="hh" hourFormat="SYNC_TO_DEVICE"
-                align="CENTER" x="0" y="75"
-                width="250" height="180">
-                <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
-                <Font color="#fafafa" size="128" family="flex"/>
-            </TimeText>
-            <TimeText format="mm" hourFormat="SYNC_TO_DEVICE"
-                align="CENTER" x="0" y="191"
-                width="250" height="180">
-                <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
-                <Font color="#fafafa" size="128" family="flex"/>
-            </TimeText>
-            <!-- Hollow -->
-            <TimeText format="hh" hourFormat="SYNC_TO_DEVICE"
-                align="CENTER" x="0" y="75"
-                width="250" height="180"
-                alpha="0">
-                <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 1 ? 255 : 0" />
-                <Font color="#fafafa" size="128" family="flex"/>
-            </TimeText>
-            <TimeText format="mm" hourFormat="SYNC_TO_DEVICE"
-                align="CENTER" x="0" y="191"
-                width="250" height="180"
-                alpha="0">
-                <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 1 ? 255 : 0" />
-                <Font color="#fafafa" size="128" family="flex"/>
-            </TimeText>
-        </DigitalClock>
+        <Condition>
+            <Expressions>
+                <Expression name="clockFontFlex"><![CDATA[[CONFIGURATION.clockFont] == 0]]></Expression>
+            </Expressions>
+            <Compare expression="clockFontFlex">
+                <DigitalClock width="250" height="450" x="100" y="0" tintColor="[CONFIGURATION.timeColor]">
+                    <Variant mode="AMBIENT" target="scaleX" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
+                    <Variant mode="AMBIENT" target="scaleY" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
+                    <TimeText format="hh" hourFormat="SYNC_TO_DEVICE"
+                        align="CENTER" x="0" y="75"
+                        width="250" height="180">
+                        <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
+                        <Font color="#fafafa" size="128" family="flex"/>
+                    </TimeText>
+                    <TimeText format="mm" hourFormat="SYNC_TO_DEVICE"
+                        align="CENTER" x="0" y="191"
+                        width="250" height="180">
+                        <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
+                        <Font color="#fafafa" size="128" family="flex"/>
+                    </TimeText>
+                </DigitalClock>
+            </Compare>
+        </Condition>
+
+        <Condition>
+            <Expressions>
+                <Expression name="clockFontGrowth"><![CDATA[[CONFIGURATION.clockFont] == 1]]></Expression>
+            </Expressions>
+            <Compare expression="clockFontGrowth">
+                <DigitalClock width="250" height="450" x="100" y="0" tintColor="[CONFIGURATION.timeColor]">
+                    <Variant mode="AMBIENT" target="scaleX" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
+                    <Variant mode="AMBIENT" target="scaleY" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
+                    <TimeText format="hh" hourFormat="SYNC_TO_DEVICE"
+                        align="CENTER" x="0" y="75"
+                        width="250" height="180">
+                        <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
+                        <Font color="#fafafa" size="128" family="growth"/>
+                    </TimeText>
+                    <TimeText format="mm" hourFormat="SYNC_TO_DEVICE"
+                        align="CENTER" x="0" y="191"
+                        width="250" height="180">
+                        <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
+                        <Font color="#fafafa" size="128" family="growth"/>
+                    </TimeText>
+                </DigitalClock>
+            </Compare>
+        </Condition>
+
+        <Condition>
+            <Expressions>
+                <Expression name="clockFontInflate"><![CDATA[[CONFIGURATION.clockFont] == 2]]></Expression>
+            </Expressions>
+            <Compare expression="clockFontInflate">
+                <DigitalClock width="250" height="450" x="100" y="0" tintColor="[CONFIGURATION.timeColor]">
+                    <Variant mode="AMBIENT" target="scaleX" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
+                    <Variant mode="AMBIENT" target="scaleY" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
+                    <TimeText format="hh" hourFormat="SYNC_TO_DEVICE"
+                        align="CENTER" x="0" y="75"
+                        width="250" height="180">
+                        <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
+                        <Font color="#fafafa" size="128" family="inflate"/>
+                    </TimeText>
+                    <TimeText format="mm" hourFormat="SYNC_TO_DEVICE"
+                        align="CENTER" x="0" y="191"
+                        width="250" height="180">
+                        <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
+                        <Font color="#fafafa" size="128" family="inflate"/>
+                    </TimeText>
+                </DigitalClock>
+            </Compare>
+        </Condition>
+
+        <Condition>
+            <Expressions>
+                <Expression name="clockFontRotation"><![CDATA[[CONFIGURATION.clockFont] == 3]]></Expression>
+            </Expressions>
+            <Compare expression="clockFontRotation">
+                <DigitalClock width="250" height="450" x="100" y="0" tintColor="[CONFIGURATION.timeColor]">
+                    <Variant mode="AMBIENT" target="scaleX" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
+                    <Variant mode="AMBIENT" target="scaleY" value="[CONFIGURATION.aod] == 2 ? 1.25 : 1" />
+                    <TimeText format="hh" hourFormat="SYNC_TO_DEVICE"
+                        align="CENTER" x="0" y="75"
+                        width="250" height="180">
+                        <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
+                        <Font color="#fafafa" size="128" family="rotation"/>
+                    </TimeText>
+                    <TimeText format="mm" hourFormat="SYNC_TO_DEVICE"
+                        align="CENTER" x="0" y="191"
+                        width="250" height="180">
+                        <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
+                        <Font color="#fafafa" size="128" family="rotation"/>
+                    </TimeText>
+                </DigitalClock>
+            </Compare>
+        </Condition>
     </Scene>
 </WatchFace>

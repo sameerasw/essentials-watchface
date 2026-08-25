@@ -20,6 +20,12 @@
 
     <string name="id_material_theme">Material Theme</string>
     <string name="id_time_color">Digital Clock Color</string>
+    <string name="id_clock_font">Digital Clock Font</string>
+
+    <string name="id_font_flex">Flex</string>
+    <string name="id_font_growth">Growth</string>
+    <string name="id_font_inflate">Inflate</string>
+    <string name="id_font_rotation">Rotation</string>
 
     <string name="id_color_graphite">Graphite</string>
     <string name="id_color_cloud">Cloud</string>
