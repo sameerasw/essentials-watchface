@@ -237,7 +237,7 @@
         <!-- Box Complications -->
         <ComplicationSlot slotId="0"
             displayName="slot_0"
-            supportedTypes="RANGED_VALUE GOAL_PROGRESS SHORT_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
+            supportedTypes="RANGED_VALUE GOAL_PROGRESS SHORT_TEXT LONG_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
             x="5"
             y="160"
             width="130"
@@ -419,6 +419,111 @@
                     </Default>
                 </Condition>
             </Complication>
+            <Complication type="LONG_TEXT">
+                <PartDraw name="bg" width="130" height="130" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
+                    <Ellipse width="130" height="130" x="0" y="0">
+                        <Fill color="#262626"/>
+                    </Ellipse>
+                </PartDraw>
+                <Condition>
+                    <Expressions>
+                        <Expression name="shortTextIconTitle">
+                            <![CDATA[[COMPLICATION.TITLE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                        <Expression name="shortTextIcon">
+                            <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                        <Expression name="shortTextTitle">
+                            <![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="shortTextIconTitle">
+                        <Group name="icon" width="32" height="32" x="49" y="10">
+                            <PartImage  width="32" height="32" x="0" y="0" renderMode="MASK">
+                                <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                            </PartImage>
+                            <PartDraw width="32" height="32" x="0" y="0">
+                                <Rectangle width="32" height="32" x="0" y="0">
+                                    <Fill color="[CONFIGURATION.themeColor.0]"/>
+                                </Rectangle>
+                            </PartDraw>
+                        </Group>
+                        <PartText name="text" height="40" width="130" x="0" y="44">
+                            <Text ellipsis="TRUE">
+                                <Font family="google_sans_text_medium" size="32">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TEXT]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                        <PartText name="title" height="40" width="130" x="0" y="76">
+                            <Text  ellipsis="TRUE">
+                                <Font color="[CONFIGURATION.themeColor.1]"
+                                    family="google_sans_text_medium"
+                                    size="28">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TITLE]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Compare expression="shortTextIcon">
+                        <Group name="icon" width="34" height="34" x="48" y="22">
+                            <PartImage width="34" height="34" x="0" y="0" renderMode="MASK">
+                                <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                            </PartImage>
+                            <PartDraw width="34" height="34" x="0" y="0">
+                                <Rectangle width="34" height="34" x="0" y="0">
+                                    <Fill color="[CONFIGURATION.themeColor.1]"/>
+                                </Rectangle>
+                            </PartDraw>
+                        </Group>
+                        <PartText name="text" height="40" width="130" x="0" y="62">
+                            <Text ellipsis="TRUE">
+                                <Font family="google_sans_text_medium" size="34" color="[CONFIGURATION.themeColor.0]">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TEXT]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Compare expression="shortTextTitle">
+                        <PartText name="title" height="40" width="130" x="0" y="20">
+                            <Text ellipsis="TRUE">
+                                <Font color="[CONFIGURATION.themeColor.1]"
+                                    family="google_sans_text_medium"
+                                    size="28">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TITLE]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                        <PartText name="text" height="40" width="130" x="0" y="62">
+                            <Text  ellipsis="TRUE">
+                                <Font family="google_sans_text_medium" size="32" color="[CONFIGURATION.themeColor.0]">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TEXT]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText name="text" height="40" width="130" x="0" y="44">
+                            <Text  ellipsis="TRUE">
+                                <Font color="[CONFIGURATION.themeColor.1]"
+                                    family="google_sans_text_medium"
+                                    size="32">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TEXT]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
             <Complication type="MONOCHROMATIC_IMAGE">
                 <PartDraw name="bg" width="130" height="130" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
                     <Ellipse width="130" height="130" x="0" y="0">
@@ -470,7 +575,7 @@
         
         <ComplicationSlot slotId="1"
             displayName="slot_1"
-            supportedTypes="RANGED_VALUE GOAL_PROGRESS SHORT_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
+            supportedTypes="RANGED_VALUE GOAL_PROGRESS SHORT_TEXT LONG_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
             x="315"
             y="160"
             width="130"
@@ -648,6 +753,111 @@
                     </Default>
                 </Condition>
             </Complication>
+            <Complication type="LONG_TEXT">
+                <PartDraw name="bg" width="130" height="130" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
+                    <Ellipse width="130" height="130" x="0" y="0">
+                        <Fill color="#262626"/>
+                    </Ellipse>
+                </PartDraw>
+                <Condition>
+                    <Expressions>
+                        <Expression name="shortTextIconTitle">
+                            <![CDATA[[COMPLICATION.TITLE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                        <Expression name="shortTextIcon">
+                            <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                        <Expression name="shortTextTitle">
+                            <![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="shortTextIconTitle">
+                        <Group name="icon" width="32" height="32" x="49" y="10">
+                            <PartImage  width="32" height="32" x="0" y="0" renderMode="MASK">
+                                <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                            </PartImage>
+                            <PartDraw width="32" height="32" x="0" y="0">
+                                <Rectangle width="32" height="32" x="0" y="0">
+                                    <Fill color="[CONFIGURATION.themeColor.0]"/>
+                                </Rectangle>
+                            </PartDraw>
+                        </Group>
+                        <PartText name="text" height="40" width="130" x="0" y="44">
+                            <Text ellipsis="TRUE">
+                                <Font family="google_sans_text_medium" size="32">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TEXT]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                        <PartText name="title" height="40" width="130" x="0" y="76">
+                            <Text  ellipsis="TRUE">
+                                <Font color="[CONFIGURATION.themeColor.1]"
+                                    family="google_sans_text_medium"
+                                    size="28">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TITLE]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Compare expression="shortTextIcon">
+                        <Group name="icon" width="34" height="34" x="48" y="22">
+                            <PartImage width="34" height="34" x="0" y="0" renderMode="MASK">
+                                <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                            </PartImage>
+                            <PartDraw width="34" height="34" x="0" y="0">
+                                <Rectangle width="34" height="34" x="0" y="0">
+                                    <Fill color="[CONFIGURATION.themeColor.1]"/>
+                                </Rectangle>
+                            </PartDraw>
+                        </Group>
+                        <PartText name="text" height="40" width="130" x="0" y="62">
+                            <Text ellipsis="TRUE">
+                                <Font family="google_sans_text_medium" size="34" color="[CONFIGURATION.themeColor.0]">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TEXT]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Compare expression="shortTextTitle">
+                        <PartText name="title" height="40" width="130" x="0" y="20">
+                            <Text ellipsis="TRUE">
+                                <Font color="[CONFIGURATION.themeColor.1]"
+                                    family="google_sans_text_medium"
+                                    size="28">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TITLE]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                        <PartText name="text" height="40" width="130" x="0" y="62">
+                            <Text  ellipsis="TRUE">
+                                <Font family="google_sans_text_medium" size="32" color="[CONFIGURATION.themeColor.0]">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TEXT]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText name="text" height="40" width="130" x="0" y="44">
+                            <Text  ellipsis="TRUE">
+                                <Font color="[CONFIGURATION.themeColor.1]"
+                                    family="google_sans_text_medium"
+                                    size="32">
+                                    <Template>%s
+                                        <Parameter expression="[COMPLICATION.TEXT]" />
+                                    </Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
             <Complication type="MONOCHROMATIC_IMAGE">
                 <PartDraw name="bg" width="130" height="130" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
                     <Ellipse width="130" height="130" x="0" y="0">
@@ -695,249 +905,6 @@
                 </Condition>
             </Complication>
             <Complication type="EMPTY"/>
-        </ComplicationSlot>
-
-        <!-- Bottom Left Edge Complication -->
-        <ComplicationSlot slotId="4"
-            displayName="slot_4"
-            supportedTypes="RANGED_VALUE GOAL_PROGRESS WEIGHTED_ELEMENTS SHORT_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
-            x="0"
-            y="0"
-            width="450"
-            height="450">
-            <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
-            <BoundingRoundBox cornerRadius="20" width="140" height="150" x="50" y="280" />
-            <Complication type="RANGED_VALUE">
-                <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
-                    <Arc startAngle="200" endAngle="235"
-                        direction="CLOCKWISE"
-                        centerX="225"
-                        centerY="225"
-                        width="390"
-                        height="390">
-                        <Stroke color="#262626" cap="ROUND" thickness="10"/>
-                    </Arc>
-                </PartDraw>
-                <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
-                    <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
-                        <Arc startAngle="200" endAngle="235"
-                            direction="CLOCKWISE"
-                            centerX="225"
-                            centerY="225"
-                            width="390"
-                            height="390">
-                            <Transform target="endAngle" value="200 + 35 * (([COMPLICATION.RANGED_VALUE_VALUE] - [COMPLICATION.RANGED_VALUE_MIN]) / ([COMPLICATION.RANGED_VALUE_MAX] - [COMPLICATION.RANGED_VALUE_MIN]))"/>
-                            <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
-                        </Arc>
-                    </PartDraw>
-                </Group>
-            </Complication>
-            <Complication type="GOAL_PROGRESS">
-                <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
-                    <Arc startAngle="200" endAngle="235"
-                        direction="CLOCKWISE"
-                        centerX="225"
-                        centerY="225"
-                        width="390"
-                        height="390">
-                        <Stroke color="#262626" cap="ROUND" thickness="10"/>
-                    </Arc>
-                </PartDraw>
-                <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
-                    <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
-                        <Arc startAngle="200" endAngle="235"
-                            direction="CLOCKWISE"
-                            centerX="225"
-                            centerY="225"
-                            width="390"
-                            height="390">
-                            <Transform target="endAngle" value="200 + 35 * clamp([COMPLICATION.GOAL_PROGRESS_VALUE] / [COMPLICATION.GOAL_PROGRESS_TARGET_VALUE], 0, 1)"/>
-                            <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
-                        </Arc>
-                    </PartDraw>
-                </Group>
-            </Complication>
-            <Complication type="SHORT_TEXT">
-                <PartText width="450" height="450" x="0" y="0">
-                    <TextCircular centerX="225" centerY="225" width="390" height="390" startAngle="200" endAngle="235" direction="CLOCKWISE" align="CENTER">
-                        <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="24">
-                            <Template>%s
-                                <Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
-                        </Font>
-                    </TextCircular>
-                </PartText>
-            </Complication>
-            <Complication type="MONOCHROMATIC_IMAGE">
-                <Group name="icon" width="28" height="28" x="120" y="360" pivotX="0.5" pivotY="0.5">
-                    <Transform target="angle" value="28"/>
-                    <PartImage width="28" height="28" x="0" y="0" renderMode="MASK">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                    </PartImage>
-                    <PartDraw width="28" height="28" x="0" y="0">
-                        <Rectangle width="28" height="28" x="0" y="0">
-                            <Fill color="[CONFIGURATION.themeColor.1]"/>
-                        </Rectangle>
-                    </PartDraw>
-                </Group>
-            </Complication>
-            <Complication type="SMALL_IMAGE">
-                <PartImage height="32" width="32" x="118" y="358">
-                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
-                </PartImage>
-            </Complication>
-            <Complication type="EMPTY"/>
-        </ComplicationSlot>
-
-        <!-- Bottom Right Edge Complication -->
-        <ComplicationSlot slotId="5"
-            displayName="slot_5"
-            supportedTypes="RANGED_VALUE GOAL_PROGRESS WEIGHTED_ELEMENTS SHORT_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
-            x="0"
-            y="0"
-            width="450"
-            height="450">
-            <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
-            <BoundingRoundBox cornerRadius="20" width="140" height="150" x="260" y="280" />
-            <Complication type="RANGED_VALUE">
-                <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
-                    <Arc startAngle="160" endAngle="125"
-                        direction="COUNTER_CLOCKWISE"
-                        centerX="225"
-                        centerY="225"
-                        width="390"
-                        height="390">
-                        <Stroke color="#262626" cap="ROUND" thickness="10"/>
-                    </Arc>
-                </PartDraw>
-                <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
-                    <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
-                        <Arc startAngle="160" endAngle="125"
-                            direction="COUNTER_CLOCKWISE"
-                            centerX="225"
-                            centerY="225"
-                            width="390"
-                            height="390">
-                            <Transform target="endAngle" value="160 - 35 * (([COMPLICATION.RANGED_VALUE_VALUE] - [COMPLICATION.RANGED_VALUE_MIN]) / ([COMPLICATION.RANGED_VALUE_MAX] - [COMPLICATION.RANGED_VALUE_MIN]))"/>
-                            <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
-                        </Arc>
-                    </PartDraw>
-                </Group>
-            </Complication>
-            <Complication type="GOAL_PROGRESS">
-                <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
-                    <Arc startAngle="160" endAngle="125"
-                        direction="COUNTER_CLOCKWISE"
-                        centerX="225"
-                        centerY="225"
-                        width="390"
-                        height="390">
-                        <Stroke color="#262626" cap="ROUND" thickness="10"/>
-                    </Arc>
-                </PartDraw>
-                <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
-                    <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
-                        <Arc startAngle="160" endAngle="125"
-                            direction="COUNTER_CLOCKWISE"
-                            centerX="225"
-                            centerY="225"
-                            width="390"
-                            height="390">
-                            <Transform target="endAngle" value="160 - 35 * clamp([COMPLICATION.GOAL_PROGRESS_VALUE] / [COMPLICATION.GOAL_PROGRESS_TARGET_VALUE], 0, 1)"/>
-                            <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
-                        </Arc>
-                    </PartDraw>
-                </Group>
-            </Complication>
-            <Complication type="SHORT_TEXT">
-                <PartText width="450" height="450" x="0" y="0">
-                    <TextCircular centerX="225" centerY="225" width="390" height="390" startAngle="160" endAngle="125" direction="COUNTER_CLOCKWISE" align="CENTER">
-                        <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="24">
-                            <Template>%s
-                                <Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
-                        </Font>
-                    </TextCircular>
-                </PartText>
-            </Complication>
-            <Complication type="MONOCHROMATIC_IMAGE">
-                <Group name="icon" width="28" height="28" x="302" y="360" pivotX="0.5" pivotY="0.5">
-                    <Transform target="angle" value="-28"/>
-                    <PartImage width="28" height="28" x="0" y="0" renderMode="MASK">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                    </PartImage>
-                    <PartDraw width="28" height="28" x="0" y="0">
-                        <Rectangle width="28" height="28" x="0" y="0">
-                            <Fill color="[CONFIGURATION.themeColor.1]"/>
-                        </Rectangle>
-                    </PartDraw>
-                </Group>
-            </Complication>
-            <Complication type="SMALL_IMAGE">
-                <PartImage height="32" width="32" x="300" y="358">
-                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
-                </PartImage>
-            </Complication>
-            <Complication type="EMPTY"/>
-        </ComplicationSlot>
-
-        <!-- Top-to-Bottom Gradient Progress -->
-        <ComplicationSlot
-            slotId="6"
-            displayName="slot_6"
-            supportedTypes="RANGED_VALUE EMPTY"
-            x="0"
-            y="0"
-            width="450"
-            height="450">
-
-            <Variant mode="AMBIENT" target="alpha" value="0" />
-
-            <BoundingRoundBox
-                cornerRadius="20"
-                width="450"
-                height="450"
-                x="0"
-                y="0" />
-
-            <Complication type="RANGED_VALUE">
-
-                <PartDraw
-                    name="top_gradient_progress"
-                    width="450"
-                    height="200"
-                    x="0"
-                    y="0"
-                    tintColor="[CONFIGURATION.themeColor.1]">
-
-                    <Rectangle
-                        x="0"
-                        y="0"
-                        width="450"
-                        height="1">
-
-                        <Transform
-                            target="height"
-                            value="4.5 * [COMPLICATION.RANGED_VALUE_VALUE]" />
-
-                        <Fill color="[CONFIGURATION.themeColor.0]">
-                            <LinearGradient
-                                startX="225"
-                                startY="0"
-                                endX="225"
-                                endY="200"
-                                colors="#80FFFFFF #40FFFFFF #00FFFFFF"
-                                positions="0 0.35 1" />
-                        </Fill>
-
-                    </Rectangle>
-
-                </PartDraw>
-
-            </Complication>
-
-            <Complication type="EMPTY" />
-
         </ComplicationSlot>
 
         <!-- Line Complications -->
@@ -1323,6 +1290,258 @@
                 </Condition>
             </Complication>
             <Complication type="EMPTY" />
+        </ComplicationSlot>
+
+                <!-- Bottom Left Edge Complication -->
+        <ComplicationSlot slotId="4"
+            displayName="slot_4"
+            supportedTypes="RANGED_VALUE GOAL_PROGRESS SHORT_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
+            x="0"
+            y="0"
+            width="450"
+            height="450">
+            <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
+            <DefaultProviderPolicy
+                defaultSystemProvider="WATCH_BATTERY"
+                defaultSystemProviderType="RANGED_VALUE"/>
+            <BoundingRoundBox cornerRadius="20" width="140" height="150" x="50" y="280" />
+            <Complication type="RANGED_VALUE">
+                <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
+                    <Arc startAngle="200" endAngle="235"
+                        direction="CLOCKWISE"
+                        centerX="225"
+                        centerY="225"
+                        width="390"
+                        height="390">
+                        <Stroke color="#262626" cap="ROUND" thickness="10"/>
+                    </Arc>
+                </PartDraw>
+                <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
+                    <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
+                        <Arc startAngle="200" endAngle="235"
+                            direction="CLOCKWISE"
+                            centerX="225"
+                            centerY="225"
+                            width="390"
+                            height="390">
+                            <Transform target="endAngle" value="200 + 35 * (([COMPLICATION.RANGED_VALUE_VALUE] - [COMPLICATION.RANGED_VALUE_MIN]) / ([COMPLICATION.RANGED_VALUE_MAX] - [COMPLICATION.RANGED_VALUE_MIN]))"/>
+                            <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
+                        </Arc>
+                    </PartDraw>
+                </Group>
+            </Complication>
+            <Complication type="GOAL_PROGRESS">
+                <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
+                    <Arc startAngle="200" endAngle="235"
+                        direction="CLOCKWISE"
+                        centerX="225"
+                        centerY="225"
+                        width="390"
+                        height="390">
+                        <Stroke color="#262626" cap="ROUND" thickness="10"/>
+                    </Arc>
+                </PartDraw>
+                <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
+                    <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
+                        <Arc startAngle="200" endAngle="235"
+                            direction="CLOCKWISE"
+                            centerX="225"
+                            centerY="225"
+                            width="390"
+                            height="390">
+                            <Transform target="endAngle" value="200 + 35 * clamp([COMPLICATION.GOAL_PROGRESS_VALUE] / [COMPLICATION.GOAL_PROGRESS_TARGET_VALUE], 0, 1)"/>
+                            <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
+                        </Arc>
+                    </PartDraw>
+                </Group>
+            </Complication>
+            <Complication type="SHORT_TEXT">
+                <PartText width="450" height="450" x="0" y="0">
+                    <TextCircular centerX="225" centerY="225" width="390" height="390" startAngle="200" endAngle="235" direction="CLOCKWISE" align="CENTER">
+                        <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="24">
+                            <Template>%s
+                                <Parameter expression="[COMPLICATION.TEXT]"/>
+                            </Template>
+                        </Font>
+                    </TextCircular>
+                </PartText>
+            </Complication>
+            <Complication type="MONOCHROMATIC_IMAGE">
+                <Group name="icon" width="28" height="28" x="120" y="360" pivotX="0.5" pivotY="0.5">
+                    <Transform target="angle" value="28"/>
+                    <PartImage width="28" height="28" x="0" y="0" renderMode="MASK">
+                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                    </PartImage>
+                    <PartDraw width="28" height="28" x="0" y="0">
+                        <Rectangle width="28" height="28" x="0" y="0">
+                            <Fill color="[CONFIGURATION.themeColor.1]"/>
+                        </Rectangle>
+                    </PartDraw>
+                </Group>
+            </Complication>
+            <Complication type="SMALL_IMAGE">
+                <PartImage height="32" width="32" x="118" y="358">
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+                </PartImage>
+            </Complication>
+            <Complication type="EMPTY"/>
+        </ComplicationSlot>
+
+                <!-- Bottom Right Edge Complication -->
+        <ComplicationSlot slotId="5"
+            displayName="slot_5"
+            supportedTypes="RANGED_VALUE GOAL_PROGRESS SHORT_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
+            x="0"
+            y="0"
+            width="450"
+            height="450">
+            <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
+            <DefaultProviderPolicy
+                defaultSystemProvider="WATCH_BATTERY"
+                defaultSystemProviderType="RANGED_VALUE"/>
+            <BoundingRoundBox cornerRadius="20" width="140" height="150" x="260" y="280" />
+            <Complication type="RANGED_VALUE">
+                <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
+                    <Arc startAngle="160" endAngle="125"
+                        direction="COUNTER_CLOCKWISE"
+                        centerX="225"
+                        centerY="225"
+                        width="390"
+                        height="390">
+                        <Stroke color="#262626" cap="ROUND" thickness="10"/>
+                    </Arc>
+                </PartDraw>
+                <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
+                    <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
+                        <Arc startAngle="160" endAngle="125"
+                            direction="COUNTER_CLOCKWISE"
+                            centerX="225"
+                            centerY="225"
+                            width="390"
+                            height="390">
+                            <Transform target="endAngle" value="160 - 35 * (([COMPLICATION.RANGED_VALUE_VALUE] - [COMPLICATION.RANGED_VALUE_MIN]) / ([COMPLICATION.RANGED_VALUE_MAX] - [COMPLICATION.RANGED_VALUE_MIN]))"/>
+                            <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
+                        </Arc>
+                    </PartDraw>
+                </Group>
+            </Complication>
+            <Complication type="GOAL_PROGRESS">
+                <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
+                    <Arc startAngle="160" endAngle="125"
+                        direction="COUNTER_CLOCKWISE"
+                        centerX="225"
+                        centerY="225"
+                        width="390"
+                        height="390">
+                        <Stroke color="#262626" cap="ROUND" thickness="10"/>
+                    </Arc>
+                </PartDraw>
+                <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
+                    <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
+                        <Arc startAngle="160" endAngle="125"
+                            direction="COUNTER_CLOCKWISE"
+                            centerX="225"
+                            centerY="225"
+                            width="390"
+                            height="390">
+                            <Transform target="endAngle" value="160 - 35 * clamp([COMPLICATION.GOAL_PROGRESS_VALUE] / [COMPLICATION.GOAL_PROGRESS_TARGET_VALUE], 0, 1)"/>
+                            <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
+                        </Arc>
+                    </PartDraw>
+                </Group>
+            </Complication>
+            <Complication type="SHORT_TEXT">
+                <PartText width="450" height="450" x="0" y="0">
+                    <TextCircular centerX="225" centerY="225" width="390" height="390" startAngle="160" endAngle="125" direction="COUNTER_CLOCKWISE" align="CENTER">
+                        <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="24">
+                            <Template>%s
+                                <Parameter expression="[COMPLICATION.TEXT]"/>
+                            </Template>
+                        </Font>
+                    </TextCircular>
+                </PartText>
+            </Complication>
+            <Complication type="MONOCHROMATIC_IMAGE">
+                <Group name="icon" width="28" height="28" x="302" y="360" pivotX="0.5" pivotY="0.5">
+                    <Transform target="angle" value="-28"/>
+                    <PartImage width="28" height="28" x="0" y="0" renderMode="MASK">
+                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                    </PartImage>
+                    <PartDraw width="28" height="28" x="0" y="0">
+                        <Rectangle width="28" height="28" x="0" y="0">
+                            <Fill color="[CONFIGURATION.themeColor.1]"/>
+                        </Rectangle>
+                    </PartDraw>
+                </Group>
+            </Complication>
+            <Complication type="SMALL_IMAGE">
+                <PartImage height="32" width="32" x="300" y="358">
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+                </PartImage>
+            </Complication>
+            <Complication type="EMPTY"/>
+        </ComplicationSlot>
+
+        <!-- Top-to-Bottom Gradient Progress -->
+        <ComplicationSlot
+            slotId="6"
+            displayName="slot_6"
+            supportedTypes="RANGED_VALUE EMPTY"
+            x="0"
+            y="0"
+            width="450"
+            height="450">
+
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <DefaultProviderPolicy
+                defaultSystemProvider="WATCH_BATTERY"
+                defaultSystemProviderType="RANGED_VALUE"/>
+
+            <BoundingRoundBox
+                cornerRadius="20"
+                width="450"
+                height="450"
+                x="0"
+                y="0" />
+
+            <Complication type="RANGED_VALUE">
+
+                <PartDraw
+                    name="top_gradient_progress"
+                    width="450"
+                    height="200"
+                    x="0"
+                    y="0"
+                    tintColor="[CONFIGURATION.themeColor.1]">
+
+                    <Rectangle
+                        x="0"
+                        y="0"
+                        width="450"
+                        height="1">
+
+                        <Transform
+                            target="height"
+                            value="4.5 * [COMPLICATION.RANGED_VALUE_VALUE]" />
+
+                        <Fill color="[CONFIGURATION.themeColor.0]">
+                            <LinearGradient
+                                startX="225"
+                                startY="0"
+                                endX="225"
+                                endY="200"
+                                colors="#80FFFFFF #40FFFFFF #00FFFFFF"
+                                positions="0 0.35 1" />
+                        </Fill>
+
+                    </Rectangle>
+
+                </PartDraw>
+
+            </Complication>
+
+            <Complication type="EMPTY" />
+
         </ComplicationSlot>
 
         <!-- Digital Clock -->
