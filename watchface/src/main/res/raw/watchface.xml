@@ -720,24 +720,22 @@
                         <Expression name="textIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
                     </Expressions>
                     <Compare expression="combinedBatt">
+                        <Group name="icon" width="32" height="32" x="209" y="45">
+                            <PartImage width="32" height="32" x="0" y="0" renderMode="MASK">
+                                <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                            </PartImage>
+                            <PartDraw width="32" height="32" x="0" y="0">
+                                <Rectangle width="32" height="32" x="0" y="0">
+                                    <Fill color="[CONFIGURATION.themeColor.1]"/>
+                                </Rectangle>
+                            </PartDraw>
+                        </Group>
                         <PartText width="450" height="450" x="0" y="0">
                             <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="32">
-                                    <InlineImage
-                                        color="[CONFIGURATION.themeColor.1]"
-                                        resource="empty_icon"
-                                        source="COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT"
-                                        width="32"
-                                        height="32" />
-                                    <Template><![CDATA[ %s  ]]>
+                                    <Template><![CDATA[%s]]>
                                         <Parameter expression="[BATTERY_PERCENT]" />
                                     </Template>
-                                    <InlineImage
-                                        color="[CONFIGURATION.themeColor.1]"
-                                        resource="empty_icon"
-                                        source="COMPLICATION.MONOCHROMATIC_IMAGE"
-                                        width="32"
-                                        height="32" />
                                     <Template><![CDATA[ %s]]>
                                         <Parameter expression="subText([COMPLICATION.TEXT],1,4)==100?100:(subText([COMPLICATION.TEXT],1,3))" />
                                     </Template>
@@ -746,13 +744,20 @@
                         </PartText>
                     </Compare>
                     <Compare expression="textIconTitle">
+                        <Group name="icon" width="32" height="32" x="209" y="45">
+                            <PartImage width="32" height="32" x="0" y="0" renderMode="MASK">
+                                <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                            </PartImage>
+                            <PartDraw width="32" height="32" x="0" y="0">
+                                <Rectangle width="32" height="32" x="0" y="0">
+                                    <Fill color="[CONFIGURATION.themeColor.1]"/>
+                                </Rectangle>
+                            </PartDraw>
+                        </Group>
                         <PartText width="450" height="450" x="0" y="0">
                             <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.1]" family="google_sans_text_medium" size="32">
-                                    <InlineImage color="[CONFIGURATION.themeColor.1]" resource="empty_icon"
-                                        source="COMPLICATION.MONOCHROMATIC_IMAGE"
-                                        width="32" height="32"/>
-                                    <Template><![CDATA[ %s]]>
+                                    <Template><![CDATA[%s]]>
                                         <Parameter expression="[COMPLICATION.TITLE]"/>
                                     </Template>
                                 </Font>
@@ -765,13 +770,20 @@
                         </PartText>
                     </Compare>
                     <Compare expression="textIcon">
+                        <Group name="icon" width="32" height="32" x="209" y="45">
+                            <PartImage width="32" height="32" x="0" y="0" renderMode="MASK">
+                                <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                            </PartImage>
+                            <PartDraw width="32" height="32" x="0" y="0">
+                                <Rectangle width="32" height="32" x="0" y="0">
+                                    <Fill color="[CONFIGURATION.themeColor.1]"/>
+                                </Rectangle>
+                            </PartDraw>
+                        </Group>
                         <PartText width="450" height="450" x="0" y="0">
                             <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="32">
-                                    <InlineImage color="[CONFIGURATION.themeColor.1]" resource="empty_icon"
-                                        source="COMPLICATION.MONOCHROMATIC_IMAGE"
-                                        width="32" height="32"/>
-                                    <Template><![CDATA[ %s]]>
+                                    <Template><![CDATA[%s]]>
                                         <Parameter expression="[COMPLICATION.TEXT]"/>
                                     </Template>
                                 </Font>
