@@ -700,17 +700,17 @@
         <ComplicationSlot slotId="2"
             displayName="slot_2"
             supportedTypes="SHORT_TEXT LONG_TEXT EMPTY"
-            x="97"
-            y="47"
-            width="256"
-            height="46">
+            x="0"
+            y="0"
+            width="450"
+            height="450">
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
             <DefaultProviderPolicy
                 primaryProvider="com.weartools.phonebattcomp/com.weartools.phonebattcomp.complication.MobileBatteryComplicationService"
                 primaryProviderType="SHORT_TEXT"
                 defaultSystemProvider="DAY_AND_DATE"
                 defaultSystemProviderType="SHORT_TEXT"/>
-            <BoundingRoundBox cornerRadius="15" width="258" height="48" x="-1" y="-1" />
+            <BoundingRoundBox cornerRadius="15" width="450" height="120" x="0" y="0" />
             <Complication type="SHORT_TEXT">
                 <Condition>
                     <Expressions>
@@ -720,8 +720,8 @@
                         <Expression name="textIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
                     </Expressions>
                     <Compare expression="combinedBatt">
-                        <PartText width="256" height="46" x="0" y="0">
-                            <Text align="CENTER" ellipsis="TRUE">
+                        <PartText width="450" height="450" x="0" y="0">
+                            <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="32">
                                     <InlineImage
                                         color="[CONFIGURATION.themeColor.1]"
@@ -742,12 +742,12 @@
                                         <Parameter expression="subText([COMPLICATION.TEXT],1,4)==100?100:(subText([COMPLICATION.TEXT],1,3))" />
                                     </Template>
                                 </Font>
-                            </Text>
+                            </TextCircular>
                         </PartText>
                     </Compare>
                     <Compare expression="textIconTitle">
-                        <PartText width="256" height="46" x="0" y="0">
-                            <Text align="CENTER" ellipsis="TRUE">
+                        <PartText width="450" height="450" x="0" y="0">
+                            <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.1]" family="google_sans_text_medium" size="32">
                                     <InlineImage color="[CONFIGURATION.themeColor.1]" resource="empty_icon"
                                         source="COMPLICATION.MONOCHROMATIC_IMAGE"
@@ -761,12 +761,12 @@
                                         <Parameter expression="[COMPLICATION.TEXT]"/>
                                     </Template>
                                 </Font>
-                            </Text>
+                            </TextCircular>
                         </PartText>
                     </Compare>
                     <Compare expression="textIcon">
-                        <PartText width="256" height="46" x="0" y="0">
-                            <Text align="CENTER" ellipsis="TRUE">
+                        <PartText width="450" height="450" x="0" y="0">
+                            <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="32">
                                     <InlineImage color="[CONFIGURATION.themeColor.1]" resource="empty_icon"
                                         source="COMPLICATION.MONOCHROMATIC_IMAGE"
@@ -775,12 +775,12 @@
                                         <Parameter expression="[COMPLICATION.TEXT]"/>
                                     </Template>
                                 </Font>
-                            </Text>
+                            </TextCircular>
                         </PartText>
                     </Compare>
                     <Compare expression="textTitle">
-                        <PartText width="256" height="46" x="0" y="0">
-                            <Text align="CENTER" ellipsis="TRUE">
+                        <PartText width="450" height="450" x="0" y="0">
+                            <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.1]" family="google_sans_text_medium" size="32">
                                     <Template>%s
                                         <Parameter expression="[COMPLICATION.TITLE]"/>
@@ -791,18 +791,18 @@
                                         <Parameter expression="[COMPLICATION.TEXT]"/>
                                     </Template>
                                 </Font>
-                            </Text>
+                            </TextCircular>
                         </PartText>
                     </Compare>
                     <Default>
-                        <PartText width="256" height="46" x="0" y="0">
-                            <Text align="START" ellipsis="TRUE">
+                        <PartText width="450" height="450" x="0" y="0">
+                            <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="32">
                                     <Template>%s
                                         <Parameter expression="[COMPLICATION.TEXT]"/>
                                     </Template>
                                 </Font>
-                            </Text>
+                            </TextCircular>
                         </PartText>
                     </Default>
                 </Condition>
@@ -816,13 +816,13 @@
                         <Expression name="textIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
                     </Expressions>
                     <Compare expression="notificationsRow">
-                        <PartImage width="256" height="32"  x="0" y="7" tintColor="[CONFIGURATION.themeColor.1]">
+                        <PartImage width="256" height="32"  x="97" y="54" tintColor="[CONFIGURATION.themeColor.1]">
                             <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT]"/>
                         </PartImage>
                     </Compare>
                     <Compare expression="textIconTitle">
-                        <PartText width="256" height="46" x="0" y="0">
-                            <Text align="CENTER" ellipsis="TRUE">
+                        <PartText width="450" height="450" x="0" y="0">
+                            <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.1]" family="google_sans_text_medium" size="32">
                                     <InlineImage color="[CONFIGURATION.themeColor.1]" resource="empty_icon"
                                         source="COMPLICATION.MONOCHROMATIC_IMAGE"
@@ -836,12 +836,12 @@
                                         <Parameter expression="[COMPLICATION.TEXT]"/>
                                     </Template>
                                 </Font>
-                            </Text>
+                            </TextCircular>
                         </PartText>
                     </Compare>
                     <Compare expression="textIcon">
-                        <PartText width="256" height="46" x="0" y="0">
-                            <Text align="CENTER" ellipsis="TRUE">
+                        <PartText width="450" height="450" x="0" y="0">
+                            <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="32">
                                     <InlineImage color="[CONFIGURATION.themeColor.1]" resource="empty_icon"
                                         source="COMPLICATION.MONOCHROMATIC_IMAGE"
@@ -850,12 +850,12 @@
                                         <Parameter expression="[COMPLICATION.TEXT]"/>
                                     </Template>
                                 </Font>
-                            </Text>
+                            </TextCircular>
                         </PartText>
                     </Compare>
                     <Compare expression="textTitle">
-                        <PartText width="256" height="46" x="0" y="0">
-                            <Text align="CENTER" ellipsis="TRUE">
+                        <PartText width="450" height="450" x="0" y="0">
+                            <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.1]" family="google_sans_text_medium" size="32">
                                     <Template>%s
                                         <Parameter expression="[COMPLICATION.TITLE]"/>
@@ -866,24 +866,25 @@
                                         <Parameter expression="[COMPLICATION.TEXT]"/>
                                     </Template>
                                 </Font>
-                            </Text>
+                            </TextCircular>
                         </PartText>
                     </Compare>
                     <Default>
-                        <PartText width="256" height="46" x="0" y="0">
-                            <Text align="START" ellipsis="TRUE">
+                        <PartText width="450" height="450" x="0" y="0">
+                            <TextCircular centerX="225" centerY="225" width="410" height="410" startAngle="270" endAngle="90" direction="CLOCKWISE" align="CENTER">
                                 <Font color="[CONFIGURATION.themeColor.0]" family="google_sans_text_medium" size="32">
                                     <Template>%s
                                         <Parameter expression="[COMPLICATION.TEXT]"/>
                                     </Template>
                                 </Font>
-                            </Text>
+                            </TextCircular>
                         </PartText>
                     </Default>
                 </Condition>
             </Complication>
             <Complication type="EMPTY" />
         </ComplicationSlot>
+
         <ComplicationSlot slotId="3"
             displayName="slot_3"
             supportedTypes="SHORT_TEXT LONG_TEXT EMPTY"
