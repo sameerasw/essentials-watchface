@@ -467,6 +467,7 @@
             </Complication>
             <Complication type="EMPTY"/>
         </ComplicationSlot>
+        
         <ComplicationSlot slotId="1"
             displayName="slot_1"
             supportedTypes="RANGED_VALUE SHORT_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
@@ -699,16 +700,16 @@
         <!-- Bottom Left Edge Complication -->
         <ComplicationSlot slotId="4"
             displayName="slot_4"
-            supportedTypes="RANGED_VALUE MONOCHROMATIC_IMAGE EMPTY"
+            supportedTypes="RANGED_VALUE EMPTY"
             x="0"
             y="0"
             width="450"
             height="450">
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
-            <BoundingRoundBox cornerRadius="20" width="130" height="150" x="20" y="270" />
+            <BoundingRoundBox cornerRadius="20" width="130" height="150" x="40" y="300" />
             <Complication type="RANGED_VALUE">
                 <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
-                    <Arc startAngle="218" endAngle="248"
+                    <Arc startAngle="200" endAngle="235"
                         direction="CLOCKWISE"
                         centerX="225"
                         centerY="225"
@@ -719,39 +720,15 @@
                 </PartDraw>
                 <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
                     <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
-                        <Arc startAngle="218" endAngle="248"
+                        <Arc startAngle="200" endAngle="235"
                             direction="CLOCKWISE"
                             centerX="225"
                             centerY="225"
                             width="410"
                             height="410">
-                            <Transform target="endAngle" value="218 + 30 * (([COMPLICATION.RANGED_VALUE_VALUE] - [COMPLICATION.RANGED_VALUE_MIN]) / ([COMPLICATION.RANGED_VALUE_MAX] - [COMPLICATION.RANGED_VALUE_MIN]))"/>
+                            <Transform target="endAngle" value="200 + 35 * (([COMPLICATION.RANGED_VALUE_VALUE] - [COMPLICATION.RANGED_VALUE_MIN]) / ([COMPLICATION.RANGED_VALUE_MAX] - [COMPLICATION.RANGED_VALUE_MIN]))"/>
                             <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
                         </Arc>
-                    </PartDraw>
-                </Group>
-                <Group name="icon" width="28" height="28" x="120" y="383" pivotX="0.5" pivotY="0.5">
-                    <Transform target="angle" value="28"/>
-                    <PartImage width="28" height="28" x="0" y="0" renderMode="MASK">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                    </PartImage>
-                    <PartDraw width="28" height="28" x="0" y="0">
-                        <Rectangle width="28" height="28" x="0" y="0">
-                            <Fill color="[CONFIGURATION.themeColor.1]"/>
-                        </Rectangle>
-                    </PartDraw>
-                </Group>
-            </Complication>
-            <Complication type="MONOCHROMATIC_IMAGE">
-                <Group name="icon" width="32" height="32" x="118" y="381" pivotX="0.5" pivotY="0.5">
-                    <Transform target="angle" value="28"/>
-                    <PartImage width="32" height="32" x="0" y="0" renderMode="MASK">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                    </PartImage>
-                    <PartDraw width="32" height="32" x="0" y="0">
-                        <Rectangle width="32" height="32" x="0" y="0">
-                            <Fill color="[CONFIGURATION.themeColor.1]"/>
-                        </Rectangle>
                     </PartDraw>
                 </Group>
             </Complication>
@@ -761,16 +738,16 @@
         <!-- Bottom Right Edge Complication -->
         <ComplicationSlot slotId="5"
             displayName="slot_5"
-            supportedTypes="RANGED_VALUE MONOCHROMATIC_IMAGE EMPTY"
+            supportedTypes="RANGED_VALUE EMPTY"
             x="0"
             y="0"
             width="450"
             height="450">
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
-            <BoundingRoundBox cornerRadius="20" width="130" height="150" x="300" y="270" />
+            <BoundingRoundBox cornerRadius="20" width="130" height="150" x="280" y="300" />
             <Complication type="RANGED_VALUE">
                 <PartDraw name="progress_bar_bg" width="450" height="450" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
-                    <Arc startAngle="142" endAngle="112"
+                    <Arc startAngle="160" endAngle="125"
                         direction="COUNTER_CLOCKWISE"
                         centerX="225"
                         centerY="225"
@@ -781,39 +758,15 @@
                 </PartDraw>
                 <Group name="progress_bar_mask" width="450" height="450" x="0" y="0">
                     <PartDraw name="progress_bar" width="450" height="450" x="0" y="0" renderMode="ALL">
-                        <Arc startAngle="142" endAngle="112"
+                        <Arc startAngle="160" endAngle="125"
                             direction="COUNTER_CLOCKWISE"
                             centerX="225"
                             centerY="225"
                             width="410"
                             height="410">
-                            <Transform target="endAngle" value="142 - 30 * (([COMPLICATION.RANGED_VALUE_VALUE] - [COMPLICATION.RANGED_VALUE_MIN]) / ([COMPLICATION.RANGED_VALUE_MAX] - [COMPLICATION.RANGED_VALUE_MIN]))"/>
+                            <Transform target="endAngle" value="160 - 35 * (([COMPLICATION.RANGED_VALUE_VALUE] - [COMPLICATION.RANGED_VALUE_MIN]) / ([COMPLICATION.RANGED_VALUE_MAX] - [COMPLICATION.RANGED_VALUE_MIN]))"/>
                             <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="10"/>
                         </Arc>
-                    </PartDraw>
-                </Group>
-                <Group name="icon" width="28" height="28" x="302" y="383" pivotX="0.5" pivotY="0.5">
-                    <Transform target="angle" value="-28"/>
-                    <PartImage width="28" height="28" x="0" y="0" renderMode="MASK">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                    </PartImage>
-                    <PartDraw width="28" height="28" x="0" y="0">
-                        <Rectangle width="28" height="28" x="0" y="0">
-                            <Fill color="[CONFIGURATION.themeColor.1]"/>
-                        </Rectangle>
-                    </PartDraw>
-                </Group>
-            </Complication>
-            <Complication type="MONOCHROMATIC_IMAGE">
-                <Group name="icon" width="32" height="32" x="300" y="381" pivotX="0.5" pivotY="0.5">
-                    <Transform target="angle" value="-28"/>
-                    <PartImage width="32" height="32" x="0" y="0" renderMode="MASK">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                    </PartImage>
-                    <PartDraw width="32" height="32" x="0" y="0">
-                        <Rectangle width="32" height="32" x="0" y="0">
-                            <Fill color="[CONFIGURATION.themeColor.1]"/>
-                        </Rectangle>
                     </PartDraw>
                 </Group>
             </Complication>
