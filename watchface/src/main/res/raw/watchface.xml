@@ -244,11 +244,11 @@
             height="130">
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
             <DefaultProviderPolicy
-                primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.offloadable.steps.OffloadableStepsComplicationDataSourceService"
+                primaryProvider="com.samsung.android.wear.shealth/com.samsung.android.wear.shealth.complications.HeartRateComplicationProviderService"
                 primaryProviderType="RANGED_VALUE"
-                secondaryProvider="com.samsung.android.wear.shealth/com.samsung.android.wear.shealth.complications.steps.StepsComplicationProviderService"
+                secondaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.offloadable.heartrate.OffloadableHeartRateComplicationDataSourceService"
                 secondaryProviderType="RANGED_VALUE"
-                defaultSystemProvider="STEP_COUNT"
+                defaultSystemProvider="HEART_RATE"
                 defaultSystemProviderType="SHORT_TEXT"/>
             <BoundingOval x="-1" y="-1" width="132" height="132"/>
             <Complication type="RANGED_VALUE">
@@ -575,16 +575,83 @@
         
         <ComplicationSlot slotId="1"
             displayName="slot_1"
-            supportedTypes="RANGED_VALUE SHORT_TEXT LONG_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
+            supportedTypes="RANGED_VALUE GOAL_PROGRESS SHORT_TEXT LONG_TEXT MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY"
             x="315"
             y="160"
             width="130"
             height="130">
             <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.aod] == 0 ? 165 : 0" />
             <DefaultProviderPolicy
-                defaultSystemProvider="WATCH_BATTERY"
-                defaultSystemProviderType="RANGED_VALUE"/>
+                primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.offloadable.steps.OffloadableStepsComplicationDataSourceService"
+                primaryProviderType="GOAL_PROGRESS"
+                secondaryProvider="com.samsung.android.wear.shealth/com.samsung.android.wear.shealth.complications.steps.StepsComplicationProviderService"
+                secondaryProviderType="GOAL_PROGRESS"
+                defaultSystemProvider="STEP_COUNT"
+                defaultSystemProviderType="GOAL_PROGRESS"/>
             <BoundingOval x="-1" y="-1" width="132" height="132"/>
+            <Complication type="GOAL_PROGRESS">
+                <PartDraw name="progress_bar_bg" width="130" height="130" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
+                    <Arc startAngle="220" endAngle="140"
+                        direction="CLOCKWISE"
+                        centerX="65"
+                        centerY="65"
+                        width="110"
+                        height="110">
+                        <Stroke color="#262626" cap="ROUND" thickness="12"/>
+                    </Arc>
+                </PartDraw>
+                <Group name="progress_bar_mask" width="130" height="130" x="0" y="0">
+                    <PartDraw name="progress_bar" width="130" height="130" x="0" y="0" renderMode="ALL">
+                        <Arc startAngle="220" endAngle="140"
+                            direction="CLOCKWISE"
+                            centerX="65"
+                            centerY="65"
+                            width="110"
+                            height="110">
+                            <Transform target="endAngle" value="220 + 280 * clamp([COMPLICATION.GOAL_PROGRESS_VALUE] / [COMPLICATION.GOAL_PROGRESS_TARGET_VALUE], 0, 1)"/>
+                            <Stroke color="[CONFIGURATION.themeColor.0]" cap="ROUND" thickness="12"/>
+                        </Arc>
+                    </PartDraw>
+                    <PartDraw name="gradient" width="130" height="130" x="0" y="0" tintColor="[CONFIGURATION.themeColor.2]">
+                        <Rectangle width="130" height="130" x="0" y="0">
+                            <Fill color="#ffffff">
+                                <SweepGradient centerX="65" centerY="65"
+                                    startAngle="213" endAngle="147"
+                                    colors="#00ffffff #ffffffff" positions="0 1" />
+                            </Fill>
+                        </Rectangle>
+                    </PartDraw>
+                </Group>
+                <PartDraw name="marker" width="16" height="16" x="57" y="2"
+                    pivotX="0.5" pivotY="3.9375">
+                    <Transform target="angle" value="220 + 280 * clamp([COMPLICATION.GOAL_PROGRESS_VALUE] / [COMPLICATION.GOAL_PROGRESS_TARGET_VALUE], 0, 1)"/>
+                    <Ellipse width="16" height="16" x="0" y="0">
+                        <Fill color="[CONFIGURATION.themeColor.0]"/>
+                    </Ellipse>
+                    <Ellipse width="16" height="16" x="0" y="0">
+                        <Stroke color="#000000" thickness="4"/>
+                    </Ellipse>
+                </PartDraw>
+                <Group name="icon" width="34" height="34" x="48" y="97">
+                    <PartImage width="34" height="34" x="0" y="0" renderMode="MASK">
+                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                    </PartImage>
+                    <PartDraw width="34" height="34" x="0" y="0">
+                        <Rectangle width="34" height="34" x="0" y="0">
+                            <Fill color="[CONFIGURATION.themeColor.1]"/>
+                        </Rectangle>
+                    </PartDraw>
+                </Group>
+                <PartText name="text" width="110" height="40" x="10" y="43">
+                    <Text ellipsis="TRUE">
+                        <Font family="google_sans_text_medium" size="30" color="[CONFIGURATION.themeColor.0]">
+                            <Template>%s
+                                <Parameter expression="[COMPLICATION.TEXT]"/>
+                            </Template>
+                        </Font>
+                    </Text>
+                </PartText>
+            </Complication>
             <Complication type="RANGED_VALUE">
                 <PartDraw name="progress_bar_bg" width="130" height="130" x="0" y="0" tintColor="[CONFIGURATION.themeColor.1]">
                     <Arc startAngle="220" endAngle="140"
@@ -1515,7 +1582,7 @@
                 <PartDraw
                     name="top_gradient_progress"
                     width="450"
-                    height="200"
+                    height="300"
                     x="0"
                     y="0"
                     tintColor="[CONFIGURATION.themeColor.1]">
@@ -1528,15 +1595,15 @@
 
                         <Transform
                             target="height"
-                            value="4.5 * [COMPLICATION.RANGED_VALUE_VALUE]" />
+                            value="7 * [COMPLICATION.RANGED_VALUE_VALUE]" />
 
                         <Fill color="[CONFIGURATION.themeColor.0]">
                             <LinearGradient
                                 startX="225"
                                 startY="0"
                                 endX="225"
-                                endY="200"
-                                colors="#80FFFFFF #40FFFFFF #00FFFFFF"
+                                endY="300"
+                                colors="#80FFFFFF #50FFFFFF #00FFFFFF"
                                 positions="0 0.35 1" />
                         </Fill>
 
