@@ -1,18 +1,25 @@
-# PixelMinimalWatchFace
-Made in Watch Face Format 2 (Wear OS 5+)
+# [Essentials](https://github.com/sameerasw/essentials) WearOS watch face in WFF
 
-## Preview
+## Requirement
+- [Essentials app](http://github.com/sameerasw/essentials/)
+- [Essentials WearOS app](http://github.com/sameerasw/essentials-wear/) for complications
+- WFF Support
+- SDK 34 or up
+- Know how to install :D
 
-<img src="https://github.com/user-attachments/assets/75819eb3-1cab-44a4-812f-9ec3c313706a" width=25% height=25%><img src="https://github.com/user-attachments/assets/03b9dfa6-bbba-4707-a362-70e990bd0866" width=25% height=25%>
+## Notice
+WFF format doe snot support scripting, so we can not dynamically update watchface theme colors with Phone's material you colors even if we have them already synced to the WearOS app. Need to be manually picked.
 
-In order to get **dual phone / watch** battery layout you need to download free [Phone Battery Complication](https://play.google.com/store/apps/details?id=com.weartools.phonebattcomp&hl=en) app and set Phone battery level complication in a corresponding slot.
+## Setup
 
-Phone Notifications complication (mirroring phone status bar notification icons) is also available within same app. See description for more info & how to set up.
+First install and setup WearOS Essentials app. Then add the watch face.
+You might need to manually pick some of the complications. Make sure they matches. 
 
-<img src="https://github.com/user-attachments/assets/211d6e37-0e18-4edc-8deb-a1bce40604bc" width=50% height=50% alt="Pixel Minimal Watch Face previews">
-
-## Release
-
-Download the package (.apk) to side-load from <a href="https://github.com/amoledwatchfaces/Pixel-Minimal-Watch-Face/releases">HERE</a>
-
-
+<img width="384" height="384" alt="screenshot-2026-08-26-06-08-10" src="https://github.com/user-attachments/assets/d3f0fab6-24a3-43fb-9999-9480e3ef3a48" /><br>
+1. Essentials - At a glance
+2. Essentials - At a glance
+3. Steps
+4. Heart rate
+5. Battery
+6. Day and date
+7. Essentials - Phone battery
