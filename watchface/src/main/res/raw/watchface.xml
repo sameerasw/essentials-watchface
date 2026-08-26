@@ -1641,7 +1641,7 @@
 
                         <Font
                             color="[CONFIGURATION.themeColor.1]"
-                            size="128"
+                            size="112"
                             family="flex_clock" />
                     </TimeText>
 
@@ -1653,7 +1653,7 @@
 
                         <Font
                             color="[CONFIGURATION.themeColor.2]"
-                            size="128"
+                            size="112"
                             family="flex_clock" />
                     </TimeText>
 
@@ -1669,7 +1669,7 @@
 
                         <Font
                             color="[CONFIGURATION.themeColor.1]"
-                            size="128"
+                            size="112"
                             family="flex_ambient" />
                     </TimeText>
 
@@ -1683,7 +1683,7 @@
 
                         <Font
                             color="[CONFIGURATION.themeColor.2]"
-                            size="128"
+                            size="112"
                             family="flex_ambient" />
                     </TimeText>
 
@@ -1715,7 +1715,7 @@
 
                         <Font
                             color="[CONFIGURATION.themeColor.1]"
-                            size="128"
+                            size="112"
                             family="growth" />
                     </TimeText>
 
@@ -1727,7 +1727,7 @@
 
                         <Font
                             color="[CONFIGURATION.themeColor.2]"
-                            size="128"
+                            size="112"
                             family="growth" />
                     </TimeText>
 
@@ -1743,7 +1743,7 @@
 
                         <Font
                             color="[CONFIGURATION.themeColor.1]"
-                            size="128"
+                            size="112"
                             family="growth_ambient" />
                     </TimeText>
 
@@ -1757,7 +1757,7 @@
 
                         <Font
                             color="[CONFIGURATION.themeColor.2]"
-                            size="128"
+                            size="112"
                             family="growth_ambient" />
                     </TimeText>
 
@@ -1804,14 +1804,14 @@
                         align="CENTER" x="0" y="75"
                         width="250" height="180">
                         <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
-                        <Font color="[CONFIGURATION.themeColor.1]" size="128" family="rotation">
+                        <Font color="[CONFIGURATION.themeColor.1]" size="112" family="rotation">
                         </Font>
                     </TimeText>
                     <TimeText format="mm" hourFormat="SYNC_TO_DEVICE"
                         align="CENTER" x="0" y="191"
                         width="250" height="180">
                         <Variant mode="AMBIENT" target="alpha" value="[CONFIGURATION.hollowAOD] == 0 ? 255 : 0" />
-                        <Font color="[CONFIGURATION.themeColor.2]" size="128" family="rotation">
+                        <Font color="[CONFIGURATION.themeColor.2]" size="112" family="rotation">
                         </Font>
                     </TimeText>
                 </DigitalClock>
