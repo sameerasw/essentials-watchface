@@ -1,5 +1,3 @@
-import com.android.build.gradle.internal.tasks.factory.dependsOn
-
 plugins {
     id("com.android.application")
 }
@@ -7,6 +5,10 @@ plugins {
 android {
     namespace = "com.sameerasw.essentials.watchface"
     compileSdk = 35
+
+    buildFeatures {
+        buildConfig = false
+    }
 
     defaultConfig {
         manifestPlaceholders += mapOf()
@@ -21,8 +23,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -36,4 +38,8 @@ android {
             isDebuggable = false
         }
     }
+}
+
+tasks.matching { it.name.startsWith("dex") || it.name.startsWith("mergeDex") || it.name.startsWith("mergeExtDex") }.configureEach {
+    enabled = false
 }
