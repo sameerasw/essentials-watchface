@@ -19,6 +19,9 @@
 WFF format doe snot support scripting, so we can not dynamically update watchface theme colors with Phone's material you colors even if we have them already synced to the WearOS app. Need to be manually picked.
 If you are on WearOS 5 (Like me on PW1, You probably don't even need this watch face. Essentials WearOS app will provide the watch face with more options.)
 
+## Installation
+Install by following instructions on the Android app
+
 ## Setup
 
 First install and setup WearOS Essentials app. Then add the watch face.
