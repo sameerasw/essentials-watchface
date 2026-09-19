@@ -2,7 +2,7 @@
 <WatchFaceInfo>
     <!-- Only "Preview" is required. -->
     <Preview value="@drawable/preview" />
-    <Category value="CATEGORY_EMPTY" />
+    <Category value="empty_category_meta" />
     <AvailableInRetail value="true" />
     <MultipleInstancesAllowed value="true" />
     <Editable value="true" />

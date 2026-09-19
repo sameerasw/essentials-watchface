@@ -5,3 +5,4 @@ watchface/build
 .artifacts/
 *.DS_Store
 watchface/release/
+build/reports/problems/problems-report.html

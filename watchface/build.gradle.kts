@@ -1,3 +1,8 @@
+import java.io.File
+import java.net.URI
+import java.nio.file.FileSystems
+import java.nio.file.Files
+
 plugins {
     id("com.android.application")
 }
@@ -15,10 +20,15 @@ android {
         applicationId = "com.sameerasw.essentials.watchface"
         minSdk = 34
         targetSdk = 37
-        versionCode = 10000000
+        versionCode = 10000002
         versionName = "1.0.0"
 
         manifestPlaceholders["publisher"] = "AndroidStudioKoala-2024.1.2"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 
     buildTypes {
@@ -31,15 +41,31 @@ android {
             )
         }
         debug {
-            /** We are not using isDebuggable flag as it is not possible to debug Watch Face Format package.
-             * Instead, we debug com.samsung.wear.watchface.runtime (Galaxy Watches) and/or
-             * com.google.wear.watchface.runtime (Pixel Watches)
-             */
             isDebuggable = false
         }
     }
 }
 
-tasks.matching { it.name.startsWith("dex") || it.name.startsWith("mergeDex") || it.name.startsWith("mergeExtDex") }.configureEach {
-    enabled = false
+tasks.matching { it.name.startsWith("build") && it.name.endsWith("PreBundle") }.configureEach {
+    doLast {
+        val outputFiles = outputs.files.asFileTree.files
+        for (file in outputFiles) {
+            if (file.name == "base.zip" && file.exists()) {
+                val zipUri = URI.create("jar:" + file.toURI().toString())
+                val env = mapOf("create" to "false")
+                try {
+                    FileSystems.newFileSystem(zipUri, env).use { fs ->
+                        val dexDir = fs.getPath("dex")
+                        if (Files.exists(dexDir)) {
+                            Files.walk(dexDir)
+                                .sorted(Comparator.reverseOrder())
+                                .forEach { Files.deleteIfExists(it) }
+                        }
+                    }
+                } catch (e: Exception) {
+                    project.logger.warn("Failed to clean dex directory from ${file}: ${e.message}")
+                }
+            }
+        }
+    }
 }
